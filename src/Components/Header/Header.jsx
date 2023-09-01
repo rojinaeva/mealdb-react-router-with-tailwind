@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Bars3Icon,XMarkIcon } from '@heroicons/react/24/solid'
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
     const [open,setOpen]=useState(false);
@@ -19,12 +20,14 @@ const Header = () => {
                     
                     
                 </div>
-                <ul className={`md:flex md:static absolute duration-500  bg-slate-300 px-2 ${open?'top-12':'-top-36'}`}>
-                    <li className='md:mr-2 text-lg text-black font-semibold hover:text-blue-600 ' ><Link to='/'>Home</Link></li>
-                    <li className='md:mr-2 text-lg text-black font-semibold hover:text-blue-600 '><Link to='/restaurant'>Restaurant</Link></li>
-                    <li className='md:mr-2 text-lg text-black font-semibold hover:text-blue-600 '><Link to='/login' >Login</Link></li>
-                    <li className='md:mr-2 text-lg text-black font-semibold hover:text-blue-600 '><Link to='/contact'>Contact</Link></li>
-                    <li className='md:mr-2 text-lg text-black font-semibold hover:text-blue-600 '><Link to='/about'>About</Link></li>
+                <ul className={`md:flex md:static absolute duration-500  bg-slate-300 px-4 ${open?'top-12':'-top-48'}`}>
+                 
+                <li className='md:mr-2 text-lg text-black font-semibold  hover:text-blue-600 ' ><ActiveLink to='/'>Home</ActiveLink></li>
+                    <li className='md:mr-2 text-lg text-black font-semibold hover:text-blue-600 '><ActiveLink to='/restaurant'>Restaurant</ActiveLink></li>
+                    <li className='md:mr-2 text-lg text-black font-semibold hover:text-blue-600 '><ActiveLink to='/users' >Users</ActiveLink></li>
+                    <li className='md:mr-2 text-lg text-black font-semibold hover:text-blue-600 '><ActiveLink to='/login' >Login</ActiveLink></li>
+                    <li className='md:mr-2 text-lg text-black font-semibold hover:text-blue-600 '><ActiveLink to='/contact'>Contact</ActiveLink></li>
+                    <li className='md:mr-2 text-lg text-black font-semibold hover:text-blue-600 '><ActiveLink to='/about'>About</ActiveLink></li>
                 </ul>
             </div>
         </nav>
